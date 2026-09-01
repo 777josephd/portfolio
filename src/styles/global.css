@@ -13,9 +13,9 @@
   --color-line: oklch(0.86 0.008 100);
   --color-line-strong: oklch(0.72 0.012 120);
   --color-soft: oklch(0.94 0.006 100);
-  --font-display: 'Fraunces Variable', Georgia, serif;
-  --font-body: 'Public Sans', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+  --font-display: 'IBM Plex Serif', Georgia, sans-serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
   --content-width: 1160px;
   --prose-width: 68ch;
   --page-pad: clamp(1rem, 3vw, 2rem);
@@ -32,9 +32,9 @@
     --color-accent-soft: color-mix(in oklch, var(--color-accent), transparent 78%);
     /* The dark-scheme accent is light, so filled surfaces need dark text. */
     --color-on-accent: oklch(0.18 0.009 250);
-    --color-bg: oklch(0.18 0.009 250);
+    --color-bg: oklch(0.18 0.009 255);
     --color-surface: oklch(0.22 0.01 250);
-    --color-text: oklch(0.93 0.006 95);
+    --color-text: oklch(0.9761 0 0);
     --color-muted: oklch(0.69 0.012 250);
     --color-line: oklch(0.34 0.012 250);
     --color-line-strong: oklch(0.44 0.016 230);
@@ -49,7 +49,7 @@
   --color-accent-soft: color-mix(in oklch, var(--color-accent), transparent 84%);
   /* Text/icon color on top of a filled accent surface. */
   --color-on-accent: oklch(0.99 0.003 100);
-  --color-bg: oklch(0.99 0.003 100);
+  --color-bg: oklch(0.9748 0 0);
   --color-surface: oklch(0.965 0.004 100);
   --color-text: oklch(0.25 0.01 250);
   --color-muted: oklch(0.5 0.012 250);
@@ -60,14 +60,14 @@
 
 :root[data-theme='dark'] {
   color-scheme: dark;
-  --color-accent: oklch(0.72 0.13 42);
+  --color-accent: oklch(0.6478 0.1692 50.86);
   --color-accent-hover: color-mix(in oklch, var(--color-accent), white 10%);
   --color-accent-soft: color-mix(in oklch, var(--color-accent), transparent 78%);
   /* The dark-scheme accent is light, so filled surfaces need dark text. */
   --color-on-accent: oklch(0.18 0.009 250);
-  --color-bg: oklch(0.18 0.009 250);
+  --color-bg:  oklch(0.1684 0 0);
   --color-surface: oklch(0.22 0.01 250);
-  --color-text: oklch(0.93 0.006 95);
+  --color-text: oklch(0.8739 0 0);
   --color-muted: oklch(0.69 0.012 250);
   --color-line: oklch(0.34 0.012 250);
   --color-line-strong: oklch(0.44 0.016 230);
@@ -299,19 +299,15 @@ p {
 h1,
 h2,
 h3 {
-  max-width: 12.5ch;
+  max-width: 24ch;
   font-family: var(--font-display);
-  font-variation-settings:
-    'opsz' 72,
-    'SOFT' 20,
-    'WONK' 1;
   font-weight: 650;
   letter-spacing: 0;
 }
 
 h1 {
   margin-bottom: calc(var(--baseline) * 1.1);
-  font-size: clamp(3.25rem, 7vw, 6rem);
+  font-size: clamp(3rem, 7vw, 6rem);
   line-height: 0.94;
 }
 

@@ -19,9 +19,9 @@ export const SITE = {
   ogImage: '/og.jpg',
   /** Post author, emitted in JSON-LD BlogPosting structured data.
    *  Leave empty ('') to omit the author field. */
-  author: 'Astro Keel',
+  /* author: 'Astro Keel',
   /** Footer credit line. */
-  footerText: 'Built with Astro Keel.',
+  footerText: '',
 } as const;
 
 /** Icons bundled with the theme — see `src/components/SocialLinks.astro`. */
