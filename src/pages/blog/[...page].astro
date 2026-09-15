@@ -5,7 +5,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Pagination from '../../components/Pagination.astro';
 import { withBase } from '../../lib/url';
 import { SITE } from '../../consts';
-import { formatDate, readingTime, t } from '../../i18n';
+import { formatDate, t } from '../../i18n';
 
 export const getStaticPaths = (async ({ paginate }) => {
   const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
@@ -22,15 +22,6 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 const { page, allTags } = Astro.props;
 const posts = page.data;
 
-const readingTimes = new Map(
-  await Promise.all(
-    posts.map(async (post) => {
-      const { remarkPluginFrontmatter } = await render(post);
-      return [post.id, readingTime(remarkPluginFrontmatter.minutesRead)] as const;
-    }),
-  ),
-);
-
 const pageTitle =
   page.currentPage === 1 ? t('blog.title') : t('blog.titlePaged', { page: page.currentPage });
 ---
@@ -41,10 +32,9 @@ const pageTitle =
 >
   <section class="page-head section">
     <p class="eyebrow">{t('blog.eyebrow')}</p>
-    <h1>Notes, essays, and release logs.</h1>
+    <h1>Notes and research.</h1>
     <p class="lead">
-      The blog collection supports tags, descriptions, draft filtering, publish dates, and optional
-      hero images.
+      Use tags or search to navigate.
     </p>
   </section>
 
@@ -65,7 +55,6 @@ const pageTitle =
                 <time datetime={post.data.publishDate.toISOString()}>
                   {formatDate(post.data.publishDate, 'short')}
                 </time>
-                <span>{readingTimes.get(post.id)}</span>
                 <span>{post.data.tags.join(' / ')}</span>
               </div>
               <h2>

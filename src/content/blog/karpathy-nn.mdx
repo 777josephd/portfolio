@@ -1,0 +1,41 @@
+---
+title: Neural Networks
+publishDate: 2026-09-15
+description: 'From the "Neural Networks: Zero to Hero" series by Andrej Karpathy.'
+tags:
+  - machine-learning
+  - python
+heroImage: ./neural-net.png
+draft: false
+---
+
+## Overview of Notebooks 1-6
+
+[View on GitHub](https://github.com/777josephd/ai-security-research/tree/main/Karpathy-NN)
+
+### 01-micrograd
+Builds an autograd engine from scratch. Implements scalar-valued backpropagation manually. Constructs a computation 
+graph that tracks forward pass values and backward pass gradients through arbitrary expressions. Builds a small multiplayer perceptron (MLP) 
+on top of it.
+
+### 02-building-makemore
+Introduces character-level language modeling. Builds a bigram model using count statistics and a learned lookup table. 
+Implements negative log likelihood as a loss function. The model learns to generate name-like sequences by predicting one character at a time.
+
+### 03-makemore-MLP
+Implements the Bengio et al. 2003 paper from scratch. Adds character embeddings, a hidden layer with tanh activation, and a proper 
+training loop with mini-batches. Introduces train/validation/test splits and systematic evaluation.
+
+### 04-makemore-activations-gradients-batchnorm
+Examines what happens inside the network during training. Diagnoses activation saturation and dead neurons. Implements batch 
+normalization from scratch. Addresses weight initialization. The gradient distribution should show a healthy gradient flow across all 
+layers after applying batch norm.
+
+### 05-makemore-backprop
+Removes autograd entirely and derives every gradient manually through the full MLP. Applies the chain rule explicitly to matrix 
+operations, cross-entropy loss, and batch normalization.
+
+### 06-makemore-wavenet
+Implements a WaveNet-inspired hierarchical architecture. Replaces the flat MLP with a tree-structured model that progressively merges character 
+context through stacked layers. Introduces more complex architectural thinking beyond simple feedforward networks.
+
