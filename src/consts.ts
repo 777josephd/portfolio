@@ -39,8 +39,8 @@ export interface SocialLink {
  *  Add or remove entries here — no template edits needed. */
 export const SOCIAL_LINKS: readonly SocialLink[] = [
   { label: 'GitHub', href: 'https://github.com/777josephd', icon: 'github' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/j-desantiago', icon: 'linkedin'},
-  { label: 'Email', href: '777joseph.de@gmail.com', icon: 'email'},
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/j-desantiago', icon: 'linkedin' },
+  { label: 'Email', href: 'mailto:777joseph.de@gmail.com', icon: 'email' },
 ];
 
 /** Giscus — GitHub Discussions-backed comments on blog posts.
