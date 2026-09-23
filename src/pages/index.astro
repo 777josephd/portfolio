@@ -33,7 +33,7 @@ const websiteSchema = {
   <StructuredData slot="head" schema={websiteSchema} />
   <section class="hero section">
     <p class="eyebrow">Portfolio / writing / notes</p>
-    <h1>IT and Cybersecurity</h1>
+    <h1>IT Operations</h1>
     <p class="lead">
       A professional portfolio demonstrating first-hand application of knowledge and 
       skills in the various domains of IT and Cybersecurity.
@@ -47,22 +47,13 @@ const websiteSchema = {
   <section class="section split-overview" aria-label={t('home.overviewLabel')}>
     <div>
       <p class="eyebrow">Principles</p>
-      <h2>Core practices:</h2>
+      <h2>Core Practices:</h2>
     </div>
     <div class="feature-list">
       <article>
-        <h3>IT Operations</h3>
+        <h3>IT</h3>
         <p>ITSM, Systems and Network Administration, Identity and Access Management,
          Virtualization and Cloud Infrastructure, Scripting and Automation.</p>
-      </article>
-      <article>
-        <h3>Security Operations</h3>
-        <p>Network Security Monitoring, SIEM Operations and Log Analysis, DFIR, 
-        Malware Analysis and Reverse Engineering, CTI and Threat Hunting, Detection Engineering and Compliance.</p>
-      </article>
-      <article>
-        <h3>Resarch</h3>
-        <p>Various articles or resources on topics of interest, such as Artificial Intelligence and Quantum Computing.</p>
       </article>
     </div>
   </section>
@@ -102,39 +93,6 @@ const websiteSchema = {
       ) : (
         <div class="empty-state compact">
           <p set:html={t('home.worksEmpty')} />
-        </div>
-      )
-    }
-  </section>
-
-  <section class="section index-feed" aria-labelledby="latest-notes">
-    <div class="section-heading">
-      <p class="eyebrow">{t('home.latestBlogEyebrow')}</p>
-      <h2 id="latest-notes">Notes</h2>
-      <a class="text-link" href={withBase('/blog/')}>{t('home.allPosts')}</a>
-    </div>
-
-    {
-      posts.length > 0 ? (
-        <div class="note-list">
-          {posts.map((post) => (
-            <article class="note-row">
-              {post.data.heroImage && (
-                <Image src={post.data.heroImage} alt="" width={320} height={220} loading="lazy" />
-              )}
-              <div>
-                <p class="meta">{formatDate(post.data.publishDate, 'short')}</p>
-                <h3>
-                  <a href={withBase(`/blog/${post.id}/`)}>{post.data.title}</a>
-                </h3>
-                <p>{post.data.description}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      ) : (
-        <div class="empty-state compact">
-          <p set:html={t('home.postsEmpty')} />
         </div>
       )
     }

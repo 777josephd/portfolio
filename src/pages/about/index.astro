@@ -1,8 +1,4 @@
 ---
-// The prose on this page is placeholder copy — rewrite it as your own. It is
-// intentionally *not* in `src/i18n/`: the dictionary holds UI chrome, so a
-// translator isn't handed someone else's biography, and you don't have to open
-// a dictionary file to edit your own about page.
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SITE } from '../../consts';
 import { t } from '../../i18n';
@@ -16,9 +12,35 @@ import { t } from '../../i18n';
     <p class="eyebrow">{t('about.eyebrow')}</p>
     <h1>Who I am.</h1>
     <p class="lead">
-      I am a self-taught IT and Cybersecurity practitioner, based in Southern California. I am DoD 8140 IAT Level II certified, 
-      having passed the CISSP to become an Associate of ISC2 as well as the CompTIA CySA+ exam.
+      Self-taught IT practitioner based in Southern California, with a background
+      in cybersecurity. DoD 8140 IAT Level II certified.
     </p>
+  </section>
+
+  <section class="section">
+    <p class="eyebrow">Credentials</p>
+    <div class="credentials-grid">
+  <a href="https://www.credly.com/badges/b6ee5f9a-3481-4fa3-a6a6-bc4db0c20a0f" target="_blank" rel="noopener noreferrer" class="credential-card">
+    <img src="https://images.credly.com/images/dcd99b5b-da24-40a6-9364-62126d590c37/image.png" alt="CompTIA CySA+ badge" />
+    <p class="credential-name">CompTIA CySA+</p>
+    <p class="credential-issuer">CompTIA</p>
+  </a>
+  <a href="https://www.credly.com/badges/88cb523c-f6f9-444c-8a4b-d81fd6519ffe" target="_blank" rel="noopener noreferrer" class="credential-card">
+    <img src="https://images.credly.com/images/ef9f86ad-4e53-4dbc-8951-e4cab81ff09e/image.png" alt="Google Cybersecurity Professional badge" />
+    <p class="credential-name">Google Cybersecurity Professional</p>
+    <p class="credential-issuer">Google / Coursera</p>
+  </a>
+  <a href="https://learn.microsoft.com/api/credentials/share/en-us/JosephDeSantiago-3317/1969E8EF3A7328F3?sharingId=BDD2D0FC710263F8" target="_blank" rel="noopener noreferrer" class="credential-card">
+    <img src="https://learn.microsoft.com/en-us/media/learn/credential/badges/applied-skill.png" alt="Microsoft Applied Skills badge" />
+    <p class="credential-name">Applied Skills: Microsoft Entra</p>
+    <p class="credential-issuer">Microsoft</p>
+  </a>
+  <a href="https://www.credly.com/badges/792e2499-fcd7-4733-bc5e-581c952f195d" target="_blank" rel="noopener noreferrer" class="credential-card">
+    <img src="https://images.credly.com/images/474a03c6-b5e1-44df-b313-adf0fed6c531/image.png" alt="Cisco IT Customer Support Basics badge" />
+    <p class="credential-name">IT Customer Support Basics</p>
+    <p class="credential-issuer">Cisco</p>
+  </a>
+</div>
   </section>
 
   <section class="section prose-grid">
@@ -28,21 +50,21 @@ import { t } from '../../i18n';
     </div>
     <div class="prose-stack">
       <p>
-        I have hands-on experience with a multitude of platforms covering Windows Active Directory 
-        and Microsoft 365 environments, as well as Linux and macOS, identity and access management, endpoint configuration and 
-        management, ITSM platforms and systems hardening, built through a mixture of practical lab work and 
-        professional experience.
+        I have hands-on experience with Windows Active Directory and Microsoft 365
+        environments, Linux and macOS, identity and access management, endpoint
+        configuration and management, ITSM platforms, and systems hardening —
+        built through practical lab work and professional experience.
       </p>
       <p>
-        Understanding how systems fail and how they're exploited allows me to be effective at 
-        maintaining them. I resolve problems fast, escalate with coherent context, and catch issues that 
-        might be overlooked without a strong security perspective.
+        Understanding how systems fail and how they are exploited allows me to be
+        effective at maintaining them. I resolve problems fast, escalate with
+        coherent context, and catch issues that might be overlooked without a
+        strong security perspective.
       </p>
       <p>
-      I also understand IT and Cybersecurity exist to keep people productive in a safe and efficient 
-      environment, allowing the organization to flourish. As an effective practitioner, I am able to 
-      bridge the gap between IT and Cybersecurity to communicate to both technical and non-technical 
-      people.
+        IT and cybersecurity exist to keep people productive in a safe, efficient
+        environment. That perspective allows me to communicate clearly across
+        technical and non-technical teams.
       </p>
     </div>
   </section>
@@ -52,39 +74,63 @@ import { t } from '../../i18n';
       <article>
         <span>01</span>
         <h3>Current focus</h3>
-        <p>Binary analysis, UEBA as a metric in AI-augmented monitoring, and network engineering.</p>
+        <p>
+          Enterprise IT support and administration, with active self-directed
+          study in networking through Cisco CCNA preparation.
+        </p>
       </article>
       <article>
         <span>02</span>
         <h3>Motto</h3>
-        <p>
-          When in doubt, read the friendly manual.
-        </p>
+        <p>When in doubt, read the friendly manual.</p>
       </article>
       <article>
         <span>03</span>
         <h3>Contact</h3>
-        <p>
-          Reach me through Email or LinkedIn.
-        </p>
+        <p>Reach me through Email or LinkedIn.</p>
       </article>
     </div>
   </section>
-
-  <section class="section prose-grid about-closing">
-    <div>
-      <p class="eyebrow">Hobbies</p>
-      <h2></h2>
-    </div>
-    <div class="prose-stack">
-      <p>
-        I love wildlife and nature. I enjoy offering my services to non-profits whenever possible 
-        and helping them maintain their organizations to be able to effectively carry out their missions.
-      </p>
-      <p>
-        If I'm not reading documentation or articles about various forms of technology, I enjoy 
-        listening to music and exercising.
-      </p>
-    </div>
-  </section>
 </BaseLayout>
+
+<style>
+  .credentials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+
+  .credential-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    gap: 0.75rem;
+    transition: opacity 0.2s ease;
+  }
+
+  .credential-card:hover {
+    opacity: 0.8;
+  }
+
+  .credential-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+  }
+
+  .credential-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin: 0;
+    color: inherit;
+  }
+
+  .credential-issuer {
+    font-size: 0.75rem;
+    margin: 0;
+    opacity: 0.6;
+  }
+</style>
